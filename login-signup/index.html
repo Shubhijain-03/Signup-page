@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic page setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Form</title>
+
+  <!-- External CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fullscreen background section -->
+  <div class="hero">
+
+    <!-- Main form container -->
+    <div class="form-box">
+
+      <!-- Toggle button container for switching between login/register -->
+      <div class="button-box">
+        <!-- Orange sliding background indicator -->
+        <div id="btn"></div>
+
+        <!-- Toggle buttons -->
+        <button type="button" class="toggle-btn" onclick="login()">Login</button>
+        <button type="button" class="toggle-btn" onclick="register()">Register</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login" class="input-group">
+        <!-- Username input -->
+        <input type="text" class="input-field" placeholder="Username" required />
+
+        <!-- Password input -->
+        <input type="password" class="input-field" placeholder="Password" required />
+
+        <!-- Remember password checkbox -->
+        <label class="checkbox-label">
+          <input type="checkbox" class="check-box" />
+          <span>Remember Password</span>
+        </label>
+
+        <!-- Submit button -->
+        <button type="submit" class="submit-btn">Login</button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="register" class="input-group">
+        <!-- Username input -->
+        <input type="text" class="input-field" placeholder="Username" required />
+
+        <!-- Email input -->
+        <input type="email" class="input-field" placeholder="Email-ID" required />
+
+        <!-- Password input -->
+        <input type="password" class="input-field" placeholder="Password" required />
+
+        <!-- Terms and conditions checkbox -->
+        <label class="checkbox-label">
+          <input type="checkbox" class="check-box" />
+          <span>Agree to the terms & conditions</span>
+        </label>
+
+        <!-- Submit button -->
+        <button type="submit" class="submit-btn">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript to toggle between login and register forms -->
+  <script>
+    // Get the login form element
+    var x = document.getElementById("login");
+
+    // Get the register form element
+    var y = document.getElementById("register");
+
+    // Get the sliding background indicator (orange tab)
+    var z = document.getElementById("btn");
+
+    // Function to switch to register form
+    function register() {
+      x.style.left = "-400px";   // Move login form out of view
+      y.style.left = "50px";     // Bring register form into view
+      z.style.left = "110px";    // Move orange indicator to register
+    }
+
+    // Function to switch to login form
+    function login() {
+      x.style.left = "50px";     // Bring login form into view
+      y.style.left = "450px";    // Move register form out of view
+      z.style.left = "0px";      // Move orange indicator to login
+    }
+  </script>
+
+</body>
+</html>

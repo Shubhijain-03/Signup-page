@@ -1,0 +1,129 @@
+/* Reset margin, padding for all elements and set base font & box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/* Full-screen background container with a dark overlay and center-aligned content */
+.hero {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(banner.jpg); /* semi-transparent overlay */
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;    /* vertically center the form */
+  justify-content: center;/* horizontally center the form */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* The main container for the login/register form */
+.form-box {
+  width: 380px;
+  height: 460px;
+  position: relative;
+  background: #fff;
+  padding: 30px 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* subtle shadow */
+  overflow: hidden; /* clip overflow from animated sliding forms */
+}
+
+/* Container for the Login/Register toggle buttons */
+.button-box {
+  width: 220px;
+  margin: 0 auto 20px;
+  position: relative;
+  box-shadow: 0 0 20px 9px #ff61241f; /* soft highlight */
+  border-radius: 30px;
+}
+
+/* The sliding orange background that indicates active tab */
+#btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 110px;      /* half width of the button-box (2 buttons) */
+  height: 100%;      /* match parent height */
+  background: linear-gradient(to right, #ff105f, #ffad06); /* gradient */
+  border-radius: 30px;
+  transition: 0.5s;  /* smooth slide animation */
+  z-index: -1;       /* stay behind the buttons */
+}
+
+/* Styling for Login/Register toggle buttons */
+.toggle-btn {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Container for each form (login or register); absolute so they can slide */
+.input-group {
+  position: absolute;
+  width: 280px;
+  transition: 0.5s; /* for sliding effect */
+  top: 100px;       /* vertical position of form */
+  left: 50px;       /* start position (updated dynamically via JS) */
+}
+
+/* Input field styling */
+.input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 10px 0;
+  border-bottom: 1px solid #999; /* underline effect */
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  outline: none;
+  background: transparent;
+}
+
+/* Submit button style */
+.submit-btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: 25px auto 0;
+  background: linear-gradient(to right, #ff105f, #ffad06); /* same orange gradient */
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Label container for checkbox and text */
+.checkbox-label {
+  display: flex;
+  align-items: center; /* vertical alignment */
+  font-size: 12px;
+  color: #777;
+  margin: 20px 0 10px;
+}
+
+/* Space between checkbox and label text */
+.checkbox-label .check-box {
+  margin-right: 10px;
+}
+
+/* Initial position of login form */
+#login {
+  left: 50px;
+}
+
+/* Position the register form off-screen to the right initially */
+#register {
+  left: 450px;
+}
